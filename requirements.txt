@@ -1,0 +1,10 @@
+# Versions from the source research environment; Python 3.10 was verified.
+# torch without a CUDA suffix allows the appropriate platform wheel.
+numpy==1.26.4
+scipy==1.15.3
+scikit-learn==1.7.2
+torch==2.11.0
+pillow==12.2.0
+matplotlib==3.10.9
+pennylane==0.42.3
+pennylane-lightning==0.42.0

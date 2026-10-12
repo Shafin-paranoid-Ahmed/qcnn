@@ -1,0 +1,29 @@
+{
+  "model": "QCNN-attn",
+  "tag": "qcnn_attn_L1_mag",
+  "seed": 1,
+  "params": 138,
+  "task": "crop3_disease",
+  "encoding": "amplitude10_mag",
+  "d_conv": 2,
+  "reupload_L": 1,
+  "best_val_macro_f1": 0.5841282855075959,
+  "history": "G:\\FOR THESIS\\MAIN\\full_qcnn_pilot\\results\\qcnn_attn_L1_mag_seed1_history.csv",
+  "checkpoint": "G:\\FOR THESIS\\MAIN\\full_qcnn_pilot\\checkpoints\\qcnn_attn_L1_mag_seed1.pt",
+  "calibration_source": "genuine_softmax_after_class_weighted_training",
+  "test": {
+    "accuracy": 0.6713091922005571,
+    "macro_f1": 0.5478604682099291,
+    "macro_recall": 0.5690756893038147,
+    "ece_15bin": 0.07922082861464715,
+    "brier": 0.44487847620809223,
+    "nll": 0.8682823026668862,
+    "per_class_recall": {
+      "3_00_0": 0.7457627118644068,
+      "3_b3_1": 0.5151515151515151,
+      "3_b6_1": 0.27586206896551724,
+      "3_b7_1": 0.7419354838709677,
+      "3_b8_1": 0.5666666666666667
+    }
+  }
+}

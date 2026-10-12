@@ -1,0 +1,5 @@
+task,resolution,train_n,val_n,val_macro_f1
+crop3_disease,28,521,358,0.6003
+crop3_disease,56,521,358,0.6066
+crop3_disease,112,521,358,0.5727
+crop3_disease,224,521,358,0.5605

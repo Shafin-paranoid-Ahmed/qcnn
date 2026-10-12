@@ -1,0 +1,29 @@
+{
+  "model": "B-PCNN-attn",
+  "tag": "bpcnn_attn",
+  "seed": 2,
+  "params": 138,
+  "task": "crop3_disease",
+  "encoding": "",
+  "d_conv": "",
+  "reupload_L": "",
+  "best_val_macro_f1": 0.3443169759649326,
+  "history": "G:\\FOR THESIS\\MAIN\\full_qcnn_pilot\\results\\bpcnn_attn_seed2_history.csv",
+  "checkpoint": "G:\\FOR THESIS\\MAIN\\full_qcnn_pilot\\checkpoints\\bpcnn_attn_seed2.pt",
+  "calibration_source": "genuine_softmax_after_class_weighted_training",
+  "test": {
+    "accuracy": 0.6434540389972145,
+    "macro_f1": 0.31391489560825947,
+    "macro_recall": 0.34154895041171696,
+    "ece_15bin": 0.2515856923448467,
+    "brier": 0.5859239795317818,
+    "nll": 1.1572735694579857,
+    "per_class_recall": {
+      "3_00_0": 0.8686440677966102,
+      "3_b3_1": 0.06060606060606061,
+      "3_b6_1": 0.0,
+      "3_b7_1": 0.6451612903225806,
+      "3_b8_1": 0.13333333333333333
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "model": "QCNN",
+  "seed": 0,
+  "task": "crop3_disease",
+  "encoding": "amplitude10",
+  "d_conv": 2,
+  "reupload_L": 3,
+  "params": 213,
+  "calibration_source": "genuine_softmax_after_class_weighted_training",
+  "best_val_macro_f1": 0.15851602023608768,
+  "history": "F:\\T2530944\\THESIS\\full_qcnn_pilot\\results\\qcnn_smoke_L3_amplitude10_seed0_history.csv"
+}

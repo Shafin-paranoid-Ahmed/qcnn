@@ -1,0 +1,29 @@
+{
+  "model": "B-ATTN",
+  "tag": "battn",
+  "seed": 0,
+  "params": 24,
+  "task": "crop3_disease",
+  "encoding": "",
+  "d_conv": "",
+  "reupload_L": "",
+  "best_val_macro_f1": 0.3579710346602324,
+  "history": "G:\\FOR THESIS\\MAIN\\full_qcnn_pilot\\results\\battn_seed0_history.csv",
+  "checkpoint": "G:\\FOR THESIS\\MAIN\\full_qcnn_pilot\\checkpoints\\battn_seed0.pt",
+  "calibration_source": "genuine_softmax_after_class_weighted_training",
+  "test": {
+    "accuracy": 0.6323119777158774,
+    "macro_f1": 0.3138478713846036,
+    "macro_recall": 0.3122700049647128,
+    "ece_15bin": 0.3191879937404895,
+    "brier": 0.6634475979191354,
+    "nll": 1.3067202677803722,
+    "per_class_recall": {
+      "3_00_0": 0.8728813559322034,
+      "3_b3_1": 0.0,
+      "3_b6_1": 0.13793103448275862,
+      "3_b7_1": 0.4838709677419355,
+      "3_b8_1": 0.06666666666666667
+    }
+  }
+}

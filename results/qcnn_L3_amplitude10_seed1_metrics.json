@@ -1,0 +1,27 @@
+{
+  "model": "QCNN",
+  "seed": 1,
+  "task": "crop3_disease",
+  "encoding": "amplitude10",
+  "d_conv": 2,
+  "reupload_L": 3,
+  "params": 213,
+  "calibration_source": "genuine_softmax_after_class_weighted_training",
+  "best_val_macro_f1": 0.5484441805894363,
+  "history": "F:\\T2530944\\THESIS\\full_qcnn_pilot\\results\\qcnn_L3_amplitude10_seed1_history.csv",
+  "test": {
+    "accuracy": 0.649025069637883,
+    "macro_f1": 0.563279350521704,
+    "macro_recall": 0.6169616928699525,
+    "ece_15bin": 0.1049480186393751,
+    "brier": 0.4541319982289564,
+    "nll": 0.8839490451171864,
+    "per_class_recall": {
+      "3_00_0": 0.673728813559322,
+      "3_b3_1": 0.42424242424242425,
+      "3_b6_1": 0.3793103448275862,
+      "3_b7_1": 0.7741935483870968,
+      "3_b8_1": 0.8333333333333334
+    }
+  }
+}

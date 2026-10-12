@@ -1,0 +1,48 @@
+[
+  {
+    "model": "B-PCNN",
+    "seed": 0,
+    "params": 133,
+    "calibration_source": "genuine_softmax_after_class_weighted_training",
+    "best_val_macro_f1": 0.34693706054226586,
+    "history": "G:\\FOR THESIS\\MAIN\\full_qcnn_pilot\\results\\bpcnn_seed0_history.csv",
+    "checkpoint": "G:\\FOR THESIS\\MAIN\\full_qcnn_pilot\\checkpoints\\bpcnn_seed0.pt",
+    "test": {
+      "accuracy": 0.6601671309192201,
+      "macro_f1": 0.28322228144989336,
+      "macro_recall": 0.30775651540003646,
+      "ece_15bin": 0.19774059240242176,
+      "brier": 0.5488619968504187,
+      "nll": 1.1115403751542217,
+      "per_class_recall": {
+        "3_00_0": 0.923728813559322,
+        "3_b3_1": 0.0,
+        "3_b6_1": 0.0,
+        "3_b7_1": 0.5483870967741935,
+        "3_b8_1": 0.06666666666666667
+      }
+    }
+  },
+  {
+    "model": "B-QUAD",
+    "seed": 0,
+    "params": null,
+    "calibration_source": "second_unweighted_logistic_model",
+    "best_val_macro_f1": 0.714143419811039,
+    "test": {
+      "accuracy": 0.8495821727019499,
+      "macro_f1": 0.7417952444135549,
+      "macro_recall": 0.7120100859655167,
+      "ece_15bin": 0.101103541395743,
+      "brier": 0.26679641785482766,
+      "nll": 0.9406954498489501,
+      "per_class_recall": {
+        "3_00_0": 0.9533898305084746,
+        "3_b3_1": 0.5151515151515151,
+        "3_b6_1": 0.5517241379310345,
+        "3_b7_1": 0.8064516129032258,
+        "3_b8_1": 0.7333333333333333
+      }
+    }
+  }
+]
