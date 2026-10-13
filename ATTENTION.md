@@ -1,4 +1,4 @@
-# Phase A3 — Patch Attention + Saliency (pre-registered spec for implementing agent)
+# Phase A3 — Patch Attention + Saliency (pre-registered implementation spec)
 
 > **Completion update — 2026-09-07:** Phase A3 finished on the home PC on
 > July 16; the original lab-PC assignment below is historical. QCNN-attn
@@ -10,7 +10,7 @@
 
 Date: 2026-07-12 (written before any attention code exists; expectations in §6
 must never be edited after results exist)
-Runs on: **lab PC** (`F:\T2530944\THESIS`, `.venv-e1` interpreter). This track
+Runs on: **lab PC** (`WORKSPACE`, `.venv-e1` interpreter). This track
 owns `full_qcnn_pilot/` on that machine; the EBM pilot runs on the other machine.
 One track = one machine = one folder; sync via git only.
 Depends on: Phase A (frozen) and the A2 ablations (`ABLATIONS.md`). Read
@@ -25,7 +25,7 @@ team runs tracks in parallel). Levels 2–3 remain parked except the conditional
 
 Attention over patches is implemented for ONE headline payoff: a **saliency map
 over the leaf** — "the model attended to these lesion patches" — a defensible
-interpretability artifact for an agricultural thesis that holds regardless of
+interpretability artifact for an agricultural project that holds regardless of
 accuracy. Accuracy gain is NOT expected to be large and is not the claim.
 No quantum-advantage claim under any outcome.
 

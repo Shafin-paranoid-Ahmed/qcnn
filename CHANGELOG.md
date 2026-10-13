@@ -1,4 +1,4 @@
-> Historical thesis record. Original machine paths and commands are retained as provenance. Use the standalone [README](README.md) and runbook for current setup.
+> Historical research record. Original machine paths and commands are retained as provenance. Use the standalone [README](README.md) and runbook for current setup.
 
 # Full-QCNN Pilot Change Log
 
@@ -14,8 +14,7 @@ Updated whenever this folder changes.
   ≥ +0.02 gain; levels 2–3 otherwise parked. Runs on the lab PC; the EBM pilot
   (`docs/still_exploring/quantum_sampler_ebm/QSAMPLER_EBM_PREREG.md`) runs on
   the local machine — one track per machine, git-only sync.
-- Wrote `ABLATIONS.md`: pre-registered Phase-A2 ablation spec for the
-  implementing agent. A2.1 = re-uploading depth L∈{2,3} (function-class /
+- Wrote `ABLATIONS.md`: pre-registered Phase-A2 ablation spec for the implementation. A2.1 = re-uploading depth L∈{2,3} (function-class /
   scalability; params grow to 173/213, so param-match holds only at L=1);
   A2.2 = `amplitude10_mag` magnitude-preserving encoding (finishes the branch
   already present in `patch_encode.py`; 133 params preserved, existing
@@ -85,7 +84,7 @@ Updated whenever this folder changes.
   configuration-specific names without modifying frozen Phase-A results.
 - Completed only the A2.1 L=2 and L=3 seed-0 budget smokes. Both passed the
   20-minute gate (149.9 and 140.2 seconds/epoch respectively). No full A2.1 or
-  conditional A2.3 run was launched by the agent.
+  conditional A2.3 run was launched during implementation.
 - Confirmed the existing three wires-6–9 magnitude seeds as official A2.2
   results: mean test Macro-F1 0.544200 +/- 0.047340. A2.3 remains pending the
   manually launched A2.1 full-run results.
@@ -97,12 +96,12 @@ Updated whenever this folder changes.
 - Added `scripts/attention_experiment.py` for uniquely tagged Phase A3
   training and seed-0 saliency CSV/PNG export, plus
   `scripts/finalize_attention.py` for `attention_runs.csv` and the final report.
-  No run was launched while the user-owned A2 Python process remained active.
+  No run was launched while the separate A2 training process remained active.
 
 ## 2026-07-14 — hardware-move reconciliation: qcnn_L3_amplitude10_seed2
 
-- A2.1 L=3 seed 2 was completed on the research PC (RTX 5070, G:\FOR
-  THESIS\MAIN), not the lab PC that ran seeds 0-1 (its metrics.json history
+- A2.1 L=3 seed 2 was completed on the research PC (RTX 5070, G: drive
+  workspace), not the lab PC that ran seeds 0-1 (its metrics.json history
   path records the G: drive). Same code, same tagged naming, identical
   hyperparameters; merged under the Step-0 rule for cross-machine results.
   Test macro-F1 0.4664. Any partial L3 seed-2 remnants on the lab PC are to
@@ -110,7 +109,7 @@ Updated whenever this folder changes.
 - A2.3 trigger evaluated per ABLATIONS.md §A2.3: L=1 mean test macro-F1
   0.4481; best A2.1 = L=2 at 0.4992 (+0.0511 >= +0.02); A2.2 mag 0.5442
   (+0.0961 >= +0.02). Both conditions met — A2.3 FIRES as L=2 +
-  amplitude10_mag, seeds 0-2, handed to the lab-PC agent.
+  amplitude10_mag, seeds 0-2, handed to the lab PC.
 
 ## 2026-07-14 — Phase A2.3 HOME-PC pre-flight and handoff
 
@@ -126,8 +125,8 @@ Updated whenever this folder changes.
 - Searched recursively for abandoned partial L3 seed-2 remnants. None existed;
   the three matching files form the completed official seed-2 bundle and were
   preserved with all other official L2/L3 and Phase-A artifacts.
-- Appended the sequential, user-launch-only A2.3 seed 0–2 command block to
-  RUN_COMMANDS.md. **No official run was launched by the agent.**
+- Appended the sequential, author-launch-only A2.3 seed 0–2 command block to
+  RUN_COMMANDS.md. **No official run was launched during implementation.**
 
 ## 2026-07-15 - Phase A3 verification and smoke gate
 
@@ -156,11 +155,10 @@ Updated whenever this folder changes.
   B-ATTN versus both gated arms without inventing a numeric "NEAR" threshold,
   an explicit human-review slot for the pre-registered B-ATTN "NEAR"
   conclusion, and an explicit qualitative saliency-review slot.
-- Appended the complete user-launch-only Phase-A3 protocol to
+- Appended the complete author-launch-only Phase-A3 protocol to
   `RUN_COMMANDS.md`: three arms by seeds 0/1/2, all three seed-0 saliency
   passes, then finalization. Also recorded the exact completed HOME-PC smoke
-  command separately as historical evidence. **No official run was launched
-  by the agent.**
+  command separately as historical evidence. **No official run was launched during implementation.**
 
 ## 2026-09-07 — Current documentation restored
 

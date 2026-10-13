@@ -8,8 +8,8 @@
   "d_conv": "",
   "reupload_L": "",
   "best_val_macro_f1": 0.4364640257707893,
-  "history": "G:\\FOR THESIS\\MAIN\\full_qcnn_pilot\\results\\battn_seed2_history.csv",
-  "checkpoint": "G:\\FOR THESIS\\MAIN\\full_qcnn_pilot\\checkpoints\\battn_seed2.pt",
+  "history": "WORKSPACE\\full_qcnn_pilot\\results\\battn_seed2_history.csv",
+  "checkpoint": "WORKSPACE\\full_qcnn_pilot\\checkpoints\\battn_seed2.pt",
   "calibration_source": "genuine_softmax_after_class_weighted_training",
   "test": {
     "accuracy": 0.637883008356546,

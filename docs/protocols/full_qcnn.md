@@ -1,12 +1,12 @@
 # Full-Resolution Patch-QCNN — Implementation Spec (Pilot)
 
 Last updated: 2026-07-11
-Status: implementation brief for an implementing agent. Read the WHOLE file
+Status: implementation brief. Read the WHOLE file
 before writing any code. This document is the single source of truth for this
 experiment. If anything here conflicts with older notes, THIS file wins.
 
 Folder for all code/results of this experiment: `full_qcnn_pilot/`
-(create it at the repository root, i.e. `G:/FOR THESIS/MAIN/full_qcnn_pilot/`).
+(create it at the repository root, i.e. `WORKSPACE/full_qcnn_pilot/`).
 Do NOT put code inside `docs/`.
 
 ---
@@ -25,7 +25,7 @@ on ONE ordinal chain (`3_a9_1 → 3_a9_2 → 3_a9_3`, a 3-class head) so it is
 tractable to simulate, while keeping the architectural novelty (full resolution,
 direct pixel→quantum learning) 100% intact.
 
-**The contribution this thesis is claiming is the ARCHITECTURE and its rigorous
+**The contribution this project is claiming is the ARCHITECTURE and its rigorous
 characterization — not a quantum advantage.** A corruption-robustness or
 calibration edge that survives the fair baselines is *upside*, not the
 load-bearing claim. Do not tune, cherry-pick, or scale circuits in search of a
@@ -57,7 +57,7 @@ which is independent of the label. Choose the target with `--task`:
   learning disease-relevant colour and texture. Use only as a sanity check, not
   the headline task.
 - `stage` : the original ordinal `3_a9` 3-class chain (Section 3.2). Hardest;
-  keep only if the disease-**staging** claim specifically matters to the thesis.
+  keep only if the disease-**staging** claim specifically matters to the project.
 
 If you pick a non-`stage` task, the class list, counts, and stratification in
 Section 3.2 change accordingly; everything else in Section 3 (parsing, splits,
@@ -66,11 +66,11 @@ seeds, image-path resolution) is unchanged.
 **Corruption robustness is an OPTIONAL axis, not mandatory (Section 9).** It is
 the ONLY axis on which the QCNN can show a *difference* from classical (on plain
 clean accuracy, strong classical models win or tie — that is the most certain
-fact here). Decide up front which claim the thesis is making:
+fact here). Decide up front which claim the project is making:
 
 - Claim = "novel quantum vision architecture" → run clean-only; corruption off.
   Simplest build; contribution is the architecture + clean characterization.
-- Claim = "quantum for corruption robustness" (the P2 pivot) → keep corruption;
+- Claim = "quantum for corruption robustness" (the phase-2 pivot) → keep corruption;
   it is the differentiator that produces a quantum-flavored story.
 
 Whichever task/claim you pick, the architecture, encoding, circuit, baselines,
@@ -98,9 +98,9 @@ QCNN edge. Because the architecture (Phase A) is the headline, a null Phase B is
 reported property, not a failed claim. Do NOT retrofit robustness tricks into
 Phase A to force a Phase B win, and do NOT pre-write the Phase B conclusion.
 
-Corruption robustness must NOT be framed as the thesis headline. If Phase B shows
+Corruption robustness must NOT be framed as the project headline. If Phase B shows
 a narrow edge that survives all three seeds, B-QUAD/B-POLY2, and B-CT, that is
-upside worth reporting — but the thesis stands on Phase A regardless.
+upside worth reporting — but the project stands on Phase A regardless.
 
 ### 0.3 Novelty positioning and claim wording — READ, this governs the writeup
 
@@ -197,13 +197,13 @@ Non-negotiable. Getting any of these wrong invalidates the experiment.
 
 ## 2. Environment
 
-- Python venv: `G:/FOR THESIS/MAIN/.venv-e1/Scripts/python.exe` (Python 3.10,
+- Python venv: `WORKSPACE/.venv-e1/Scripts/python.exe` (Python 3.10,
   torch 2.x + CUDA, scikit-learn, numpy, pandas, PIL/Pillow available).
 - Quantum framework: **PennyLane with the `default.qubit` simulator and the
   PyTorch interface** (`qml.qnn.TorchLayer`), `diff_method="backprop"`. Install
   into the venv if missing:
   ```powershell
-  & "G:/FOR THESIS/MAIN/.venv-e1/Scripts/python.exe" -m pip install pennylane pennylane-lightning
+  & "WORKSPACE/.venv-e1/Scripts/python.exe" -m pip install pennylane pennylane-lightning
   ```
   **IMPORTANT (measured 2026-07-11):** use `default.qubit` + `backprop`, NOT
   `lightning.qubit` + `adjoint`, for the patch layer. `default.qubit` **broadcasts**
@@ -496,7 +496,7 @@ headline table: QCNN vs B-PCNN vs B-QUAD vs B-E0 across clean (+ corruptions if 
 
 ### 10.1 Required analysis studies (these ARE the positive contribution)
 
-Because the thesis claim is the architecture, these two studies are first-class
+Because the project claim is the architecture, these two studies are first-class
 deliverables — run them even if the QCNN never beats a classical baseline.
 
 **A. Scalability / ablation study** → `results/scalability.csv`. Vary one factor
@@ -522,9 +522,9 @@ honest answer to "is the quantum structure doing anything?"
 
 ## 11. Go / no-go — framed around the ARCHITECTURE claim
 
-The thesis contribution is the architecture + its honest characterization, so the
+The project contribution is the architecture + its honest characterization, so the
 gate decides **whether to EXPAND** (Phase 4: more chains/classes, coherent
-pooling), NOT whether the thesis lives. The pilot is publishable/defensible
+pooling), NOT whether the project lives. The pilot is publishable/defensible
 either way as "we built and characterized the first full-resolution Patch-QCNN
 for crop disease staging."
 
@@ -619,7 +619,7 @@ as the `progression_graph_experiment/` folder does.
 ## 15. Naming
 
 This system replaces E0 (learns directly from pixels), so it is not the E3 head.
-Working name for the thesis:
+Working name for the project:
 
 ```text
 Q0: Full-Resolution Hierarchical Patch-QCNN

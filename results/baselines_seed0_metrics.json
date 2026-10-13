@@ -5,8 +5,8 @@
     "params": 133,
     "calibration_source": "genuine_softmax_after_class_weighted_training",
     "best_val_macro_f1": 0.34693706054226586,
-    "history": "G:\\FOR THESIS\\MAIN\\full_qcnn_pilot\\results\\bpcnn_seed0_history.csv",
-    "checkpoint": "G:\\FOR THESIS\\MAIN\\full_qcnn_pilot\\checkpoints\\bpcnn_seed0.pt",
+    "history": "WORKSPACE\\full_qcnn_pilot\\results\\bpcnn_seed0_history.csv",
+    "checkpoint": "WORKSPACE\\full_qcnn_pilot\\checkpoints\\bpcnn_seed0.pt",
     "test": {
       "accuracy": 0.6601671309192201,
       "macro_f1": 0.28322228144989336,

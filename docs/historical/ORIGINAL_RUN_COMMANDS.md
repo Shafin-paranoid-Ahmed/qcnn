@@ -1,4 +1,4 @@
-> Historical thesis record. Original machine paths and commands are retained as provenance. Use the standalone [README](../../README.md) and runbook for current setup.
+> Historical research record. Original machine paths and commands are retained as provenance. Use the standalone [README](../../README.md) and runbook for current setup.
 
 # Run Commands
 
@@ -11,8 +11,8 @@ The old unpinned package-install line is historical; use the repository's
 pinned environment and do not run it merely to inspect completed results.
 
 ```powershell
-$PY = "G:\FOR THESIS\MAIN\.venv-e1\Scripts\python.exe"
-cd "G:\FOR THESIS\MAIN"
+$PY = "WORKSPACE\.venv-e1\Scripts\python.exe"
+cd "WORKSPACE"
 ```
 
 ## Phase A
@@ -43,14 +43,14 @@ cd "G:\FOR THESIS\MAIN"
 ## Phase A2 ablations — research PC
 
 ```powershell
-$PY = "F:\T2530944\THESIS\.venv-e1\Scripts\python.exe"
-Set-Location -LiteralPath "F:\T2530944\THESIS"
+$PY = "WORKSPACE\.venv-e1\Scripts\python.exe"
+Set-Location -LiteralPath "WORKSPACE"
 
 # Completed budget smokes (seed 0 only)
 & $PY -u .\full_qcnn_pilot\scripts\train_qcnn.py --split-seed 0 --encoding amplitude10 --reupload-L 2 --tag smoke_L2_amplitude10 --batch-size 4 --lr 0.01 --smoke
 & $PY -u .\full_qcnn_pilot\scripts\train_qcnn.py --split-seed 0 --encoding amplitude10 --reupload-L 3 --tag smoke_L3_amplitude10 --batch-size 4 --lr 0.01 --smoke
 
-# User-launched full A2.1 runs; do not run concurrently.
+# Manually launched full A2.1 runs; do not run concurrently.
 0,1,2 | ForEach-Object { & $PY -u .\full_qcnn_pilot\scripts\train_qcnn.py --split-seed $_ --encoding amplitude10 --reupload-L 2 --tag L2_amplitude10 --epochs 100 --patience 15 --batch-size 4 --lr 0.01 }
 0,1,2 | ForEach-Object { & $PY -u .\full_qcnn_pilot\scripts\train_qcnn.py --split-seed $_ --encoding amplitude10 --reupload-L 3 --tag L3_amplitude10 --epochs 100 --patience 15 --batch-size 4 --lr 0.01 }
 ```
@@ -60,7 +60,7 @@ Set-Location -LiteralPath "F:\T2530944\THESIS"
 Run only after `Get-Process python*` confirms no training process is alive.
 
 ```powershell
-$PY = "F:\T2530944\THESIS\.venv-e1\Scripts\python.exe"
+$PY = "WORKSPACE\.venv-e1\Scripts\python.exe"
 
 # Required budget smoke; stop if the reported complete epoch exceeds 1200 s.
 & $PY -u .\full_qcnn_pilot\scripts\attention_experiment.py --arm qcnn_attn --split-seed 0 --smoke
@@ -73,32 +73,32 @@ $PY = "F:\T2530944\THESIS\.venv-e1\Scripts\python.exe"
 & $PY .\full_qcnn_pilot\scripts\finalize_attention.py
 ```
 
-## Phase A2.3 conditional combined runs — HOME PC — user launch only
+## Phase A2.3 conditional combined runs — HOME PC — manual launch only
 
 The pre-registered trigger fired on 2026-07-14. Run these sequentially, never
-concurrently. The agent did not execute this block.
+concurrently. This block was not executed during implementation.
 
-    $PY = "G:\FOR THESIS\MAIN\.venv-e1\Scripts\python.exe"
+    $PY = "WORKSPACE\.venv-e1\Scripts\python.exe"
     # A2.3 official runs — sequential, never concurrent
     0,1,2 | ForEach-Object { & $PY -u .\full_qcnn_pilot\scripts\train_qcnn.py --split-seed $_ --encoding amplitude10_mag --reupload-L 2 --tag L2_amplitude10_mag --epochs 100 --patience 15 --batch-size 4 --lr 0.01 }
 
-## Phase A3 permitted smoke - HOME PC - completed by agent (2026-07-15)
+## Phase A3 permitted smoke - HOME PC - completed during implementation (2026-07-15)
 
 Historical command record only; do not rerun as part of the official matrix.
 This was the sole permitted one-epoch smoke and completed below the budget gate.
 
 ```powershell
-& "G:\FOR THESIS\MAIN\.venv-e1\Scripts\python.exe" -u .\full_qcnn_pilot\scripts\attention_experiment.py --arm qcnn_attn --split-seed 0 --smoke
+& "WORKSPACE\.venv-e1\Scripts\python.exe" -u .\full_qcnn_pilot\scripts\attention_experiment.py --arm qcnn_attn --split-seed 0 --smoke
 ```
 
-## Phase A3 attention - HOME PC - user launch only (2026-07-15)
+## Phase A3 attention - HOME PC - manual launch only (2026-07-15)
 
 Run sequentially. Do not run any two arms or seeds concurrently. This is the
-official Phase-A3 protocol; the agent did not execute any command in this block.
+official Phase-A3 protocol; no command in this block was executed during implementation.
 
 ```powershell
-$PY = "G:\FOR THESIS\MAIN\.venv-e1\Scripts\python.exe"
-Set-Location -LiteralPath "G:\FOR THESIS\MAIN"
+$PY = "WORKSPACE\.venv-e1\Scripts\python.exe"
+Set-Location -LiteralPath "WORKSPACE"
 
 # QCNN-attn: fixed amplitude10_mag L=1 base, seeds 0/1/2.
 0,1,2 | ForEach-Object { & $PY -u .\full_qcnn_pilot\scripts\attention_experiment.py --arm qcnn_attn --split-seed $_ --epochs 100 --patience 15 --batch-size 4 --lr 0.01 }
@@ -118,4 +118,4 @@ Set-Location -LiteralPath "G:\FOR THESIS\MAIN"
 & $PY -u .\full_qcnn_pilot\scripts\finalize_attention.py
 ```
 
-**No official run was launched by the agent.**
+**No official run was launched during implementation.**

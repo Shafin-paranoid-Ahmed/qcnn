@@ -9,7 +9,7 @@ Do NOT implement until the base QCNN (Phase A) has cleared its go/no-go.
   Severities {2,3,5}. Fixed shared corruption seeds so every model sees identical
   corrupted images.
 - A null / fall-short corruption result is EXPECTED and ACCEPTABLE (spec 0.2).
-  Corruption is NOT the thesis headline.
+  Corruption is NOT the project headline.
 """
 from __future__ import annotations
 

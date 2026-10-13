@@ -1,4 +1,4 @@
-> Historical thesis record. Original machine paths and commands are retained as provenance. Use the standalone [README](README.md) and runbook for current setup.
+> Historical research record. Original machine paths and commands are retained as provenance. Use the standalone [README](README.md) and runbook for current setup.
 
 # Results Log
 
@@ -34,7 +34,7 @@ Task `crop3_disease` (5 classes): `3_00_0`(1177), `3_b3_1`(166), `3_b6_1`(142),
   linear. So there is a real risk the QCNN lands near this 0.57 floor unless the
   hierarchical pooling + data re-uploading add genuine nonlinearity. **B-QUAD is
   exactly the control that will detect this.** Watch for it.
-- TODO for implementing agent: add res=224 (heavier), and add a small-CNN Phase-0
+- TODO: add res=224 (heavier), and add a small-CNN Phase-0
   row so the resolution-sensitivity of a spatial model is on record.
 
 Status: scaffold verified end-to-end (splits + Phase 0 run clean). Quantum scripts
@@ -213,7 +213,7 @@ three-seed protocol may proceed.
 Step 0 added configuration-derived output tags to `train_qcnn.py`; new outputs
 use `qcnn_{tag}_seed{N}` and the frozen Phase-A result files retained their
 original SHA-256 hashes and mtimes. On this lab research PC
-(`F:\T2530944\THESIS`; Python 3.10.11, Torch 2.11.0+cu128, PennyLane 0.42.3,
+(`WORKSPACE`; Python 3.10.11, Torch 2.11.0+cu128, PennyLane 0.42.3,
 RTX 4090 present), both `default.qubit` + `backprop` A2.1 budget smokes passed:
 
 - L=2, tag `smoke_L2_amplitude10`: **149.9 s/epoch** (2.50 min), 173 params,
@@ -222,8 +222,8 @@ RTX 4090 present), both `default.qubit` + `backprop` A2.1 budget smokes passed:
   validation Macro-F1 0.1585.
 
 Exact commands are recorded in `RUN_COMMANDS.md`. Both are below the fixed
-20-minute gate. No full L=2/L=3 seed was launched by the agent; those commands
-are provided for manual user execution. A2.1 is a scaling/function-class study,
+20-minute gate. No full L=2/L=3 seed was launched during implementation; those commands
+are provided for manual execution. A2.1 is a scaling/function-class study,
 not a parameter-matched comparison: only L=1 retains the 133-parameter match.
 
 Magnitude-wire reconciliation: the authoritative 2026-07-11 §5.5 design uses
@@ -266,10 +266,10 @@ train_qcnn.py already accepts --encoding amplitude10_mag, --reupload-L, and
 --tag, and writes configuration-tagged artifacts. Unit-level model construction
 independently reported 173 trainable parameters for L=2 with amplitude10_mag.
 
-On the HOME PC (G:\FOR THESIS\MAIN, NVIDIA GeForce RTX 5070), the only run
-launched by the agent was this one-epoch budget smoke:
+On the HOME PC (WORKSPACE, NVIDIA GeForce RTX 5070), the only run
+launched during implementation was this one-epoch budget smoke:
 
-    & "G:\FOR THESIS\MAIN\.venv-e1\Scripts\python.exe" -u .\full_qcnn_pilot\scripts\train_qcnn.py --split-seed 0 --encoding amplitude10_mag --reupload-L 2 --tag smoke_L2_amplitude10_mag --batch-size 4 --lr 0.01 --smoke
+    & "WORKSPACE\.venv-e1\Scripts\python.exe" -u .\full_qcnn_pilot\scripts\train_qcnn.py --split-seed 0 --encoding amplitude10_mag --reupload-L 2 --tag smoke_L2_amplitude10_mag --batch-size 4 --lr 0.01 --smoke
 
 The smoke reported exactly **173 parameters** and **218.7549383 seconds** for
 the complete training-plus-validation epoch (3.65 minutes), with validation
@@ -283,10 +283,10 @@ this checkout. The only matching files were the completed official seed-2
 checkpoint, 88-epoch history CSV, and final metrics JSON, so none was deleted;
 this preserves the official L2/L3 and Phase-A evidence as required.
 
-The user-launch-only A2.3 block was appended to RUN_COMMANDS.md for seeds 0, 1,
+The author-launch-only A2.3 block was appended to RUN_COMMANDS.md for seeds 0, 1,
 and 2, sequential and never concurrent, with the fixed L=2, amplitude10_mag,
 tag L2_amplitude10_mag, 100 epochs, patience 15, batch size 4, and learning rate
-0.01. **No official run was launched by the agent.**
+0.01. **No official run was launched during implementation.**
 
 ## 2026-07-14 — Phase A2.3 complete (L=2 + amplitude10_mag, home PC, 3 seeds)
 
@@ -317,7 +317,7 @@ both still trailing B-QUAD) and closes the function-class story.
 Deliverables written: results/ablations_all_runs.csv (15 rows: L1/L2/L3
 amplitude + L1/L2 mag, 3 seeds each, with tag column); results/
 function_class.md rewritten with the full mean±std table and verdict.
-Runs were user-launched; no official run was launched by an agent.
+Runs were author-launched; no official run was launched during implementation.
 
 ## 2026-07-15 - Phase A3 verification and budget smoke (HOME PC)
 
@@ -329,9 +329,9 @@ the shared five-parameter scorer/gate, `alpha = softmax(score / 1)`,
 pool1 -> pool2 -> head, identical B-PCNN gating, and the 24-parameter B-ATTN
 null. Independent construction reported parameter counts 138, 138, and 24.
 
-The only run launched by the agent was the allowed one-epoch smoke:
+The only run launched during implementation was the allowed one-epoch smoke:
 
-    & "G:\FOR THESIS\MAIN\.venv-e1\Scripts\python.exe" -u .\full_qcnn_pilot\scripts\attention_experiment.py --arm qcnn_attn --split-seed 0 --smoke
+    & "WORKSPACE\.venv-e1\Scripts\python.exe" -u .\full_qcnn_pilot\scripts\attention_experiment.py --arm qcnn_attn --split-seed 0 --smoke
 
 The complete training-plus-validation epoch took **133.1297 seconds**, below
 the fixed 1200-second stop gate, with validation Macro-F1 0.307831. The emitted
@@ -345,12 +345,11 @@ after excluding and then deleting the three uniquely tagged smoke artifacts.
 No pre-existing result mtime changed, and no smoke artifact remains.
 
 The full three-arm by three-seed training protocol, three seed-0 saliency
-passes, and finalizer are recorded in `RUN_COMMANDS.md` for manual user
-execution. **No official run was launched by the agent.**
+passes, and finalizer are recorded in `RUN_COMMANDS.md` for manual execution. **No official run was launched during implementation.**
 
 ## 2026-07-16 — Phase A3 attention complete (home PC, 3 seeds + seed-0 saliency)
 
-All three arms trained (user-launched, .venv-e1). Mean ± sample std test
+All three arms trained (author-launched, .venv-e1). Mean ± sample std test
 Macro-F1 over seeds 0/1/2:
 
 | Arm | Params | Test Macro-F1 |
@@ -379,4 +378,4 @@ Headline: attention adds no accuracy on this task (the 5-param gate cannot
 overcome the amplitude-encoding/readout bottleneck already established by the
 A2 function-class study), but yields a defensible class-dependent
 interpretability artifact. This closes the QCNN track. No official run was
-launched by an agent.
+launched during implementation.

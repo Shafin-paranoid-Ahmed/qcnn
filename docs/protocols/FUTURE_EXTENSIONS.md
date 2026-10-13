@@ -26,7 +26,7 @@ the model learn which patches drive the prediction.
 - **Best payoff (lead with this if implemented):** attention weights give a
   **saliency map over the leaf** — "the model attended to these lesion patches."
   A concrete, defensible interpretability figure that holds regardless of accuracy
-  or any quantum advantage. Strong for an agricultural thesis.
+  or any quantum advantage. Strong for an agricultural project.
 - **Do it hierarchically/windowed, NOT global over 196 patches** (196² ≈ 38k
   pairs). Attend inside 2×2 / 4×4 windows → regional tokens → regional attention →
   global.
@@ -91,7 +91,7 @@ figure; running the QCNN on K < 196 patches directly cuts the ~2.7 min/epoch cos
      ~25 qubits (~0.5 GB); the QUBO's dense similarity couplings entangle
      everything, so no chunking/tensor-network escape. Options are: shrink to a
      ~5×5 patch grid (abandons the 224×224 identity), real hardware (D-Wave/IBM
-     access mid-thesis), or "quantum-inspired" SA (the classical baseline in a
+     access mid-project), or "quantum-inspired" SA (the classical baseline in a
      costume).
   2. **Known outcome is a tie at best.** Low-depth QAOA does not beat simulated
      annealing on small/medium QUBOs; the relevance−redundancy objective is
@@ -157,9 +157,9 @@ Un-parking conditions (ALL required):
 
 Un-park an idea ONLY if all hold:
 1. The base patch-QCNN (Phase A) has cleared its go/no-go with a real number.
-2. There is enough thesis runway for another research-grade component.
+2. There is enough project runway for another research-grade component.
 3. The idea adds either (a) a defensible architectural-novelty claim, or (b) a
    concrete interpretability artifact — not merely "more quantum."
 
-Otherwise leave it here. A finished thesis on the base architecture beats an
+Otherwise leave it here. A finished project on the base architecture beats an
 unfinished one with five half-built mechanisms.

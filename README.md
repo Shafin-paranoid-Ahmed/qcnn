@@ -68,7 +68,7 @@ If you already have the local checkout, start from its root and skip the clone s
 
 The smoke check creates a synthetic image and checks preprocessing, finite logits, and finite gradients for the base and magnitude-plus-attention models. It needs no crop dataset or quantum hardware and does not write research results. Successful output includes two `PASS` lines.
 
-The dependency versions are recorded in [requirements.txt](requirements.txt). Extraction checks used an existing installed environment; a completely fresh installation and other operating systems were not verified. See [VALIDATION.md](VALIDATION.md) for the exact boundary.
+The dependency versions are recorded in [requirements.txt](requirements.txt). See [VALIDATION.md](VALIDATION.md) for which environments and checks have been verified.
 
 ## Dataset and frozen splits
 
@@ -118,17 +118,19 @@ The [current runbook](RUN_COMMANDS.md) contains the registered clean comparison 
 | [scripts/attention_experiment.py](scripts/attention_experiment.py) | Attention comparisons and saliency export. |
 | [splits/](splits/) | Frozen split manifests. |
 | [results/](results/) | Historical metrics, reports, tables, and figures. |
-| [checkpoints/](checkpoints/) | Small checkpoints tracked in the original source snapshot. |
+| [checkpoints/](checkpoints/) | Small checkpoints from the recorded runs. |
 | [docs/protocols/](docs/protocols/) | Specifications and proposed extensions, with historical context. |
 
 For a reading order, start with the result reports, then the [main protocol](docs/protocols/full_qcnn.md), and finally the relevant implementation files.
 
-## Reproducibility and provenance
+## Reproducibility
 
-This repository is a clean standalone snapshot of the original thesis experiment. It does not require the thesis repository or the separate QEMCMC project. Frozen artifacts preserve their source bytes; historical metadata may still mention the machines on which the experiments ran.
+The repository is self-contained and does not depend on the separate [QEMCMC](https://github.com/Shafin-paranoid-Ahmed/qemcmc) project. Recorded result files keep their original values; their path fields use `WORKSPACE` in place of the machine-specific directory the runs used.
 
-- [PROVENANCE.md](PROVENANCE.md): source commit, contributor record, and extraction changes.
-- [SOURCE_MANIFEST.json](SOURCE_MANIFEST.json): original and extracted file hashes.
-- [VALIDATION.md](VALIDATION.md): successful synthetic checks, fresh-clone verification, and checks not performed.
-- [EXTRACTION_CHECKLIST.md](EXTRACTION_CHECKLIST.md): completed separation and publication checklist.
-- [NOTICE.md](NOTICE.md): attribution and licensing status; extraction did not assign a new redistribution license.
+- [MANIFEST.json](MANIFEST.json): SHA-256 hashes of the frozen code, splits, results, and checkpoints.
+- [VALIDATION.md](VALIDATION.md): checks that were run, and checks that were not.
+- [NOTICE.md](NOTICE.md): authorship, licensing status, and dataset terms.
+
+## Contributors
+
+Shafin Ahmed ([@Shafin-paranoid-Ahmed](https://github.com/Shafin-paranoid-Ahmed)), with contributions from [@guardianbot1](https://github.com/guardianbot1) and [@thinkiamparanoid2](https://github.com/thinkiamparanoid2).

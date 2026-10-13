@@ -1,4 +1,4 @@
-# Phase A2 — Pre-Registered Ablations (spec for implementing agent)
+# Phase A2 — Pre-Registered Ablations (implementation spec)
 
 > **Completion update — 2026-09-07:** A2.1 depth 2/3, A2.2 magnitude, and
 > the triggered A2.3 combined run are complete. Three-seed test Macro-F1:

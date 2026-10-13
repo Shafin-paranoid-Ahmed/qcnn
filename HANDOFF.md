@@ -1,4 +1,4 @@
-> Historical thesis record. Original machine paths and commands are retained as provenance. Use the standalone [README](README.md) and runbook for current setup.
+> Historical research record. Original machine paths and commands are retained as provenance. Use the standalone [README](README.md) and runbook for current setup.
 
 # Full-QCNN Pilot Handoff
 
@@ -46,6 +46,6 @@ B-QUAD controls, validation-only checkpoint selection, and mean/sample-std
 reporting. Do not tune on test outcomes.
 
 Phase B and other parked extensions are not automatic next runs. Follow
-the user's selected task and retain original preregistered expectations as
+the selected next task and retain original preregistered expectations as
 dated history. Record any new work in CHANGELOG, RESULTS_LOG, and central
 context; keep command ownership and artifact protections in the runbook.

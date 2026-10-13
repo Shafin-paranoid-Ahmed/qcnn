@@ -1,4 +1,4 @@
-> Historical thesis record. Original machine paths and commands are retained as provenance. Use the standalone [README](../../README.md) and runbook for current setup.
+> Historical research record. Original machine paths and commands are retained as provenance. Use the standalone [README](../../README.md) and runbook for current setup.
 
 # Full-QCNN Pilot
 

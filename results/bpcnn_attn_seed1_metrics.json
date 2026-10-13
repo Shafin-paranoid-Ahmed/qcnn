@@ -8,8 +8,8 @@
   "d_conv": "",
   "reupload_L": "",
   "best_val_macro_f1": 0.38492907648059027,
-  "history": "G:\\FOR THESIS\\MAIN\\full_qcnn_pilot\\results\\bpcnn_attn_seed1_history.csv",
-  "checkpoint": "G:\\FOR THESIS\\MAIN\\full_qcnn_pilot\\checkpoints\\bpcnn_attn_seed1.pt",
+  "history": "WORKSPACE\\full_qcnn_pilot\\results\\bpcnn_attn_seed1_history.csv",
+  "checkpoint": "WORKSPACE\\full_qcnn_pilot\\checkpoints\\bpcnn_attn_seed1.pt",
   "calibration_source": "genuine_softmax_after_class_weighted_training",
   "test": {
     "accuracy": 0.6211699164345403,
